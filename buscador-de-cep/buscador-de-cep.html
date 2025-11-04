@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de CEP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.png">
+</head>
+<body>
+    <main>
+        <h1>Formulário de Endereço</h1>
+        
+        <div class="form-group">
+            <label for="cep">Digite o CEP:</label>
+            <input type="text" id="cep-input" placeholder="Ex: 01001000" maxlength="9">
+            <button id="search-btn">Buscar</button>
+        </div>
+
+        <p id="loading-indicator" class="hidden">Carregando...</p>
+
+        <div id="result-container">
+            <h3>Endereço:</h3>
+
+            <div class="result-group">
+                <label for="logradouro">Rua:</label>
+                <input type="text" id="logradouro" disabled>
+            </div>
+
+            <div class="form-row">
+                <div class="result-group" id="bairro-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" disabled>
+                </div>
+                <div class="result-group" id="numero-group">
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" placeholder="Ex: 123">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="result-group" id="cidade-group">
+                    <label for="localidade">Cidade:</label>
+                    <input type="text" id="localidade" disabled>
+                </div>
+                <div class="result-group" id="estado-group">
+                    <label for="uf">Estado:</label>
+                    <input type="text" id="uf" disabled>
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button id="btn-proximo" disabled>Próximo</button>
+            </div>
+        </div>
+
+        <div id="user-info-container">
+            <h3>Dados Pessoais:</h3>
+
+            <div class="result-group">
+                <label for="nome-completo">Nome Completo:</label>
+                <input type="text" id="nome-completo" placeholder="Digite seu nome">
+            </div>
+
+            <div class="form-row">
+                <div class="result-group" id="genero-group">
+                    <label for="genero">Gênero:</label>
+                    <select id="genero">
+                        <option value="">Selecione...</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="outro">Outro</option>
+                        <option value="nao-informar">Prefiro não informar</option>
+                    </select>
+                </div>
+                <div class="result-group" id="data-nasc-group">
+                    <label for="data-nascimento">Data de Nascimento:</label>
+                    <input type="date" id="data-nascimento">
+                </div>
+            </div>
+            
+            <div class="button-row">
+                <button id="btn-enviar" disabled>Enviar dados</button>
+            </div>
+        </div>
+
+        <p id="submit-loading-indicator" class="hidden">Enviando dados...</p>
+        
+        <div id="success-message">
+            <h3>Obrigado!</h3>
+            <p>Seus dados foram enviados com sucesso.</p>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
